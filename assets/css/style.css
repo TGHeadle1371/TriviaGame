@@ -1,0 +1,22 @@
+body {
+    background-image: url('../images/geography.png')
+}
+h1 {
+    background-color: #ffffff;
+    opacity: .8;
+    font-size: 48px;
+    margin-bottom: 100px;
+}
+button:hover {
+    color: rgb(28, 224, 28);
+}
+
+.questionList {
+    background-color: #ffffff;
+    opacity: .8;
+}
+#footer {
+    color: rgb(175, 50, 0);
+    background-color: white;
+    opacity: .8;
+}
