@@ -40,6 +40,9 @@ h1 {
 #startBtn {
     margin: 5px;
 }
+#startOverBtn {
+    background: none;
+}
 /* Button hover style */
 #startBtn:hover {
     color: rgb(28, 224, 28);
