@@ -176,7 +176,7 @@ $(document).ready(function () {
         } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
             incorrectAnswer++;
             $('#message').html(messages.incorrect);
-            $('#wrongGif').html('<img src = "assets/images/' + wrongGif[currentQuestion] + '.gif" width = "200px">');
+            $('#wrongGif').html('<img src = "assets/images/' + wrongGif + '.gif" width = "200px">');
             $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
 
         } else {
