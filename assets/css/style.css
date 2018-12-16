@@ -14,15 +14,18 @@
     padding: 10px;
     font-family: 'Monoton', cursive;
 }
+/* Header hover styling */
 #top:hover {
     font-family: 'Major Mono Display', monospace;
     font-size: 48px;
     color: #aa4949;
 }
+/* Font size of question */
 #currentQuesiton {
     font-size: 20px;
    
 }
+/* Answer list styling */
 .answerList {
     background-color: #9e5353;
     font-size: 18px; 
@@ -31,6 +34,16 @@
     font-family: 'Khand', sans-serif;
 
 }
+/* Header width */
+.header-fluid {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    width: 100%;
+    min-width: 100%;
+    background-color: #ffffff;
+}
+/* Answer list hover styling */
 .answerList:hover {
     color: #28ac6e;
 }
@@ -48,24 +61,27 @@ h1 {
 #main-container {
     margin-top: 100px;
 }
+/* Time left font */
 #timeLeft {
     font-family: 'Bungee', cursive;
-
 }
+/* Current question font */
 #currentQuestion {
         font-family: 'Khand', sans-serif;
-
 }
+/* All div hover font */
 div:hover {
     font-family: 'Major Mono Display', monospace;
 }
+/* Time hover font */
 #timeleft:hover {
         font-family: 'Major Mono Display', monospace;
 }
-
+/* Start button spacing */
 #startBtn {
     margin: 5px;
 }
+/* Take startover button background away */
 #startOverBtn {
     background: none;
 }
@@ -74,6 +90,7 @@ div:hover {
     color: rgb(28, 224, 28);
     background-color: #000000;
 }
+/* question font */
 .question {
     font-size: 24px;
     font-family: 'Bungee', cursive;

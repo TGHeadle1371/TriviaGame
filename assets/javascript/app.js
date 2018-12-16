@@ -151,9 +151,12 @@ $(document).ready(function () {
 
     // Change display of time, display answered page if answered is false
     function showCountdown() {
+        // Decrement seconds
         seconds--;
+        // Add time remaining html with seconds
         $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
         if (seconds < 1) {
+            // When the seconds are less than 1, clear the time, answered is false, run answerpage function
             clearInterval(time);
             answered = false;
             answerPage();
@@ -161,25 +164,33 @@ $(document).ready(function () {
     }
     // Answer page, empty divs, display right answer and gif image
     function answerPage() {
+        // Clear divs
         $('#currentQuestion').empty();
         $('.thisChoice').empty(); //Clears question page
         $('.question').empty();
-
+        // Set variables of answer text and index
         var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
         //checks to see correct, incorrect, or unanswered, displays gif
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
+            // Increment correct answer
             correctAnswer++;
+            // Change message
             $('#message').html(messages.correct);
+            // Add gif
             $('#gif').html('<img src = "assets/images/' + gifList[currentQuestion] + '.gif" width = "200px">');
         } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
+            // Increment incorrect answers
             incorrectAnswer++;
+            // Change incorrect message
             $('#message').html(messages.incorrect);
+            // Insert gif
             $('#wrongGif').html('<img src = "assets/images/' + wrongGif + '.gif" width = "200px">');
             $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
 
         } else {
+            // If nothing, increment unanswered, display message
             unanswered++;
             $('#message').html(messages.timesUp);
             $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
@@ -201,6 +212,7 @@ $(document).ready(function () {
         $('#gif').empty();
         $('#wrongGif').empty();
 
+        // Change div display html
         $('#finalMessage').html(messages.finished);
         $('#correctAnswers').html("Correct Answers: " + correctAnswer);
         $('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
