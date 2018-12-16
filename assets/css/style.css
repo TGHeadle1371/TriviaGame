@@ -5,10 +5,13 @@
 }
 /* Header styling */
 #top {
-    margin-top: -25px;
+    margin-top: -20px;
     background-color: #ffffff;
     border-bottom: 1px solid #ee4646;
     opacity: .9;
+    padding: 10px;
+    font-family: 'Monoton', cursive;
+
 }
 #currentQuesiton {
     font-size: 20px;
@@ -19,6 +22,8 @@
     font-size: 18px; 
     border: 1px solid #ffffff;
     border-radius: 10px;
+    font-family: 'Khand', sans-serif;
+
 }
 .answerList:hover {
     color: #28ac6e;
@@ -37,6 +42,10 @@ h1 {
 #main-container {
     margin-top: 100px;
 }
+#timeLeft {
+    font-family: 'Bungee', cursive;
+
+}
 #startBtn {
     margin: 5px;
 }
@@ -50,11 +59,16 @@ h1 {
 }
 .question {
     font-size: 24px;
+    font-family: 'Bungee', cursive;
+
 }
  /* List background style*/
 .questionList {
     background-color: #ffffff;
     opacity: .8;
+    font-family: 'Bungee',
+    cursive;
+
 }
 /* Footer style */
 #footer {
