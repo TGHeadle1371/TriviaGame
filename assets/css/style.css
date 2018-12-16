@@ -10,6 +10,19 @@
     border-bottom: 1px solid #ee4646;
     opacity: .9;
 }
+#currentQuesiton {
+    font-size: 20px;
+   
+}
+.answerList {
+    background-color: #9e5353;
+    font-size: 18px; 
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+.answerList:hover {
+    color: #28ac6e;
+}
 /* Background image */
 body {
     background-image: url('../images/geography.png')
@@ -23,6 +36,9 @@ h1 {
 /* Container margin */
 #main-container {
     margin-top: 100px;
+}
+#startBtn {
+    margin: 5px;
 }
 /* Button hover style */
 #startBtn:hover {
