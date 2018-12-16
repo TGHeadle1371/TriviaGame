@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#top {
+    margin-top: -25px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ee4646;
+    opacity: .9;
+}
 body {
     background-image: url('../images/geography.png')
 }
@@ -5,9 +15,12 @@ h1 {
     background-color: #ffffff;
     opacity: .8;
     font-size: 48px;
-    margin-bottom: 100px;
 }
-button:hover {
+#main-container {
+    margin-top: 100px;
+}
+
+.startBtn:hover {
     color: rgb(28, 224, 28);
 }
 
@@ -17,6 +30,7 @@ button:hover {
 }
 #footer {
     color: rgb(175, 50, 0);
+    border-top: 1px solid #ee4646;
     background-color: white;
     opacity: .8;
 }
