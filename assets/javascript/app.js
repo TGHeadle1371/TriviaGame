@@ -1,3 +1,6 @@
+
+// Trivia Questions
+
 var triviaQuestions = [{
     question: "What is the largest country located entirely in Europe?",
     answerList: ["Ukraine", "Georgia", "Yugoslavia", "Russia"],
@@ -45,37 +48,50 @@ var triviaQuestions = [{
 
 }];
 
+// Picture List
 var gifList = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10', 'question11'];
+var wrongGif = ['wrong1'];
+// Question to be answered
 var currentQuestion;
+// Answer to question
 var correctAnswer;
+// All incorrect answers
 var incorrectAnswer;
+// If you didn't answer
 var unanswered;
+// Seconds left
 var seconds;
+// Time
 var time;
+// If answered
 var answered;
+// Users choice
 var userSelect;
+// Messages to display
 var messages = {
     correct: "Yep, that's right!",
-    incorrect: "No, that's not correct.",
-    endTime: "You're out of time!",
-    finished: "Alright! Let's see how well you did."
+    incorrect: "No, that's incorrect.",
+    timesUp: "You're out of time!",
+    finished: "Lets check how well you did."
 };
-
+// On click start button of game, hide button start newGame()
 $('#startBtn').on('click', function () {
     $(this).hide();
     newGame();
 });
-
+// start over btn on click hide the btn and start newGame()
 $('#startOverBtn').on('click', function () {
     $(this).hide();
     newGame();
 });
-
+// newGame function
 function newGame() {
+    // empty display divs
     $('#finalMessage').empty();
     $('#correctAnswers').empty();
     $('#incorrectAnswers').empty();
     $('#unanswered').empty();
+// Set variables to null and run newquestion()
     currentQuestion = 0;
     correctAnswer = 0;
     incorrectAnswer = 0;
@@ -83,21 +99,22 @@ function newGame() {
     newQuestion();
 }
 
+// new Question function, empty div displays, set answered to true
 function newQuestion() {
     $('#message').empty();
     $('#correctedAnswer').empty();
     $('#gif').empty();
+    $('#wrongGif').empty();
     answered = true;
 
     //sets up new questions & answerList
     $('#currentQuestion').html('Question #' + (currentQuestion + 1) + '/' + triviaQuestions.length);
+    // Iterate through questions
     $('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
     for (var i = 0; i < 4; i++) {
         var choices = $('<div>');
         choices.text(triviaQuestions[currentQuestion].answerList[i]);
-        choices.attr({
-            'data-index': i
-        });
+        choices.attr({'data-index': i });
         choices.addClass('thisChoice');
         $('.answerList').append(choices);
     }
@@ -109,15 +126,18 @@ function newQuestion() {
         answerPage();
     });
 }
-
+// Countdown function
 function countdown() {
+    // Give 20 seconds
     seconds = 20;
+    // display time remaining
     $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
     answered = true;
-    //sets timer to go down
+    //sets timer to go down by 1 second interval
     time = setInterval(showCountdown, 1000);
 }
 
+// Change display of time, display answered page if answered is false
 function showCountdown() {
     seconds--;
     $('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
@@ -127,7 +147,7 @@ function showCountdown() {
         answerPage();
     }
 }
-
+// Answer page, empty divs, display right answer and gif image
 function answerPage() {
     $('#currentQuestion').empty();
     $('.thisChoice').empty(); //Clears question page
@@ -135,8 +155,8 @@ function answerPage() {
 
     var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
     var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
-    
-    //checks to see correct, incorrect, or unanswered
+
+    //checks to see correct, incorrect, or unanswered, displays gif
     if ((userSelect == rightAnswerIndex) && (answered == true)) {
         correctAnswer++;
         $('#message').html(messages.correct);
@@ -144,27 +164,30 @@ function answerPage() {
     } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
         incorrectAnswer++;
         $('#message').html(messages.incorrect);
+        $('#wrongGif').html('<img src = "assets/images/' + wrongGif[currentQuestion] + '.gif" width = "400px">');
         $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+        
     } else {
         unanswered++;
-        $('#message').html(messages.endTime);
+        $('#message').html(messages.timesUp);
         $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
         answered = true;
     }
-
+// If there is no question, set timeout to 3 seconds or add question set timeout 3 seconds.
     if (currentQuestion == (triviaQuestions.length - 1)) {
-        setTimeout(scoreboard, 2000);
+        setTimeout(scoreboard, 3000);
     } else {
         currentQuestion++;
-        setTimeout(newQuestion, 2000);
+        setTimeout(newQuestion, 3000);
     }
 }
-
+// Empty scoreboard divs, display scoreboard div values
 function scoreboard() {
     $('#timeLeft').empty();
     $('#message').empty();
     $('#correctedAnswer').empty();
     $('#gif').empty();
+    $('#wrongGif').empty();
 
     $('#finalMessage').html(messages.finished);
     $('#correctAnswers').html("Correct Answers: " + correctAnswer);

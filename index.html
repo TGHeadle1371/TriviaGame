@@ -1,4 +1,5 @@
-"<!DOCTYPE html>
+"
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,36 +18,37 @@
     <div class="header text-center" id="top">
         <h1> Geography Trivia Game </h1>
     </div>
-<div id="main-container" class="container text-center" style="opacity: 0.8;">
-<div class="container"> 
-    <div class="jumbotron" id="questionList">
-    <button class="btn btn-primary" id="startBtn">Start</button>
-    <!-- Question page -->
-    <div id="timeLeft"></div>
-    <div id="currentQuestion"></div>
-    <div class="question"></div>
-    <div class="answerList"></div>
-    <!-- Answer Page -->
-    <div id="message"></div>
-    <div id="correctedAnswer"></div>
-    <div id="gif"></div>
-    <!-- Scoreboard -->
-    <div id="finalMessage"></div>
-    <div id="correctAnswers"></div>
-    <div id="incorrectAnswers"></div>
-    <div id="unanswered"></div>
-    <div id="startOverBtn"></div>
+    <div id="main-container" class="container text-center" style="opacity: 0.8;">
+        <div class="container">
+            <div class="jumbotron" id="questionList">
+                <button class="btn btn-primary" id="startBtn">Start</button>
+                <!-- Question page -->
+                <div id="timeLeft"></div>
+                <div id="currentQuestion"></div>
+                <div class="question"></div>
+                <div class="answerList"></div>
+                <!-- Answer Page -->
+                <div id="message"></div>
+                <div id="correctedAnswer"></div>
+                <div id="gif"></div>
+                <div id="wrongGif"></div>
+                <!-- Scoreboard -->
+                <div id="finalMessage"></div>
+                <div id="correctAnswers"></div>
+                <div id="incorrectAnswers"></div>
+                <div id="unanswered"></div>
+                <div id="startOverBtn"></div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-<footer id="footer" class="site-footer text-center fixed-bottom ">
-    <div class="container">
-        &copy; Copyright 2018 | Thomas Headle
-    </div>
-</footer>
+    <footer id="footer" class="site-footer text-center fixed-bottom ">
+        <div class="container">
+            &copy; Copyright 2018 | Thomas Headle
+        </div>
+    </footer>
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>

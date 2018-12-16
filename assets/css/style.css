@@ -1,33 +1,40 @@
+/* Set margin and paddings to zero */
 * {
     margin: 0;
     padding: 0;
 }
+/* Header styling */
 #top {
     margin-top: -25px;
     background-color: #ffffff;
     border-bottom: 1px solid #ee4646;
     opacity: .9;
 }
+/* Background image */
 body {
     background-image: url('../images/geography.png')
 }
+/* h1 opacity and font size */
 h1 {
     background-color: #ffffff;
     opacity: .8;
     font-size: 48px;
 }
+/* Container margin */
 #main-container {
     margin-top: 100px;
 }
-
-.startBtn:hover {
+/* Button hover style */
+#startBtn:hover {
     color: rgb(28, 224, 28);
+    background-color: #000000;
 }
-
+ /* List background style*/
 .questionList {
     background-color: #ffffff;
     opacity: .8;
 }
+/* Footer style */
 #footer {
     color: rgb(175, 50, 0);
     border-top: 1px solid #ee4646;
