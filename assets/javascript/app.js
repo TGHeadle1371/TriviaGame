@@ -78,6 +78,8 @@ var messages = {
 $('#startBtn').on('click', function () {
     $(this).hide();
     newGame();
+    $('.media').media();
+
 });
 // start over btn on click hide the btn and start newGame()
 $('#startOverBtn').on('click', function () {
