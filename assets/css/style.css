@@ -11,7 +11,11 @@
     opacity: .9;
     padding: 10px;
     font-family: 'Monoton', cursive;
-
+}
+#top:hover {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 48px;
+    color: #aa4949;
 }
 #currentQuesiton {
     font-size: 20px;
@@ -46,6 +50,17 @@ h1 {
     font-family: 'Bungee', cursive;
 
 }
+#currentQuestion {
+        font-family: 'Khand', sans-serif;
+
+}
+div:hover {
+    font-family: 'Major Mono Display', monospace;
+}
+#timeleft:hover {
+        font-family: 'Major Mono Display', monospace;
+}
+
 #startBtn {
     margin: 5px;
 }
