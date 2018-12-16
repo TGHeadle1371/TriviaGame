@@ -160,11 +160,11 @@ function answerPage() {
     if ((userSelect == rightAnswerIndex) && (answered == true)) {
         correctAnswer++;
         $('#message').html(messages.correct);
-        $('#gif').html('<img src = "assets/images/' + gifList[currentQuestion] + '.gif" width = "400px">');
+        $('#gif').html('<img src = "assets/images/' + gifList[currentQuestion] + '.gif" width = "200px">');
     } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
         incorrectAnswer++;
         $('#message').html(messages.incorrect);
-        $('#wrongGif').html('<img src = "assets/images/' + wrongGif[currentQuestion] + '.gif" width = "400px">');
+        $('#wrongGif').html('<img src = "assets/images/' + wrongGif[currentQuestion] + '.gif" width = "200px">');
         $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
         
     } else {
