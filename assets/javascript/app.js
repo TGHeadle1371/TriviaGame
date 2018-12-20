@@ -49,12 +49,10 @@ $(document).ready(function () {
         answer: 0
 
     }];
-
+    // Audio file
     var audio1 = document.createElement('audio');
     audio1.setAttribute('src', './assets/audio/true.mp3');
-    x = 'jär';
-    console.log(x);
-    console.log(encodeURIComponent(x));
+    
     // Picture List
     var gifList = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10', 'question11'];
     var wrongGif = ['wrong1'];
