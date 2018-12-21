@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(function () { //On document ready
 
 
-    // Trivia Questions
+    // Trivia Questions, answer array list, and value #
 
     var triviaQuestions = [{
         question: "What is the largest country located entirely in Europe?",
@@ -49,11 +49,11 @@ $(document).ready(function () {
         answer: 0
 
     }];
-    // Audio file
+    // Audio file variable and attribute
     var audio1 = document.createElement('audio');
     audio1.setAttribute('src', './assets/audio/true.mp3');
-    
-    // Picture List
+
+    // Picture gif List correct and incorrect
     var gifList = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10', 'question11'];
     var wrongGif = ['wrong1'];
     // Question to be answered
@@ -97,7 +97,7 @@ $(document).ready(function () {
         $('#correctAnswers').empty();
         $('#incorrectAnswers').empty();
         $('#unanswered').empty();
-        // Set variables to null and run newquestion()
+        // Set variables to 0, run newquestion(), and play audio files
         currentQuestion = 0;
         correctAnswer = 0;
         incorrectAnswer = 0;
@@ -117,18 +117,19 @@ $(document).ready(function () {
 
         //sets up new questions & answerList
         $('#currentQuestion').html('Question #' + (currentQuestion + 1) + '/' + triviaQuestions.length);
-        // Iterate through questions
+        // question class html - create h2 with trivia question current question 
         $('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
+        // Iterate through questions 
         for (var i = 0; i < 4; i++) {
-            var choices = $('<div>');
-            choices.text(triviaQuestions[currentQuestion].answerList[i]);
-            choices.attr({
+            var choices = $('<div>'); //Create div variable
+            choices.text(triviaQuestions[currentQuestion].answerList[i]); // Assign the div variable text to answer list
+            choices.attr({ //Assign the attribute data-index to the iteration
                 'data-index': i
             });
-            choices.addClass('thisChoice');
-            $('.answerList').append(choices);
+            choices.addClass('thisChoice'); // Add the class thisChoice to choices
+            $('.answerList').append(choices); //Append choices to .answerlist class
         }
-        countdown();
+        countdown(); //Run countdown
         //clicking an answer will pause the time and setup answerPage
         $('.thisChoice').on('click', function () {
             userSelect = $(this).data('index');
@@ -170,7 +171,7 @@ $(document).ready(function () {
         var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
-        //checks to see correct, incorrect, or unanswered, displays gif
+        //check to see correct, incorrect, or unanswered, displays gif
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
             // Increment correct answer
             correctAnswer++;
